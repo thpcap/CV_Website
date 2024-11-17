@@ -1,0 +1,716 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0;
+}
+
+.profile-photo {
+    width: 150px;  /* Largeur mise à jour */
+    height: auto; /* Hauteur mise à jour */
+    object-fit: cover; /* Maintient l'intégrité du ratio sans déformation */
+    border-radius: 8px; /* Bordure arrondie pour un effet esthétique */
+    margin-bottom: 10px;
+}
+
+
+section {
+    text-align: center;
+    width: 90%; /* Définir la largeur de chaque section à 90% de la largeur du body */
+    margin: 0 auto; /* Centrer la section horizontalement */
+    padding: 20px; /* Ajouter du padding pour espacer le contenu */
+    box-sizing: border-box; /* Inclure le padding dans la largeur totale */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) ;
+}
+
+
+h2 {
+    background-color: #34495e;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+/* Style pour les logos */
+.logo {
+    width: 70px;  /* Ajustez cette valeur pour augmenter la taille */
+    height: auto; /* La hauteur sera ajustée automatiquement pour conserver les proportions */
+    vertical-align: middle;  /* Aligner verticalement le logo avec le texte */
+    margin-right: 15px;  /* Espacement entre le logo et le texte */
+}
+
+/* Pour les listes avec logos */
+ul li {
+    margin-bottom: 15px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Cacher les détails par défaut */
+.experience-details {
+    display: none;
+    width: 100%; /* Prendre toute la largeur du bloc */
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Assurer que le padding ne dépasse pas de la largeur */
+}
+
+/* Style pour le bouton */
+.show-info-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Effet au survol du bouton */
+.show-info-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+@media (max-width: 768px) {
+    .header-content {
+        text-align: center;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .logo {
+        width: 40px; /* Réduire légèrement la taille des logos sur les petits écrans */
+    }
+
+    section {
+        margin-bottom: 15px;
+    }
+}
+
+/* Section des expériences */
+#experiences {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+/* Flèche symbolisant le temps */
+.time-arrow {
+    width: 50px;
+    height: 3px;
+    background-color: #4CAF50;
+    margin: 0 auto 20px;
+}
+
+/* Conteneur des cartes en grille */
+.experience-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Cartes d'expérience */
+.experience-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Logos des entreprises */
+.experience-logo {
+    width: auto;
+    height: 80px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* Informations des expériences */
+.experience-info {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.show-info-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1.5rem; /* Taille plus grande pour l'icône */
+    border-radius: 50%;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.show-info-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.1); /* Agrandit le bouton au survol */
+}
+
+.show-info-btn i {
+    font-size: 1.8rem; /* Taille de l'icône plus grande */
+}
+
+/* Détails des expériences */
+.experience-details {
+    display: none;
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-align: left;
+    transition: opacity 0.3s ease;
+}
+
+.experience-details h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.experience-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.experience-details p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Responsive Design : cartes se réorganisent sur petits écrans */
+@media (max-width: 768px) {
+    .experience-container {
+        grid-template-columns: 1fr; /* Sur petits écrans, une seule carte par ligne */
+        gap: 20px;
+    }
+
+    .experience-card {
+        max-width: 90%;
+    }
+
+    .show-info-btn {
+        padding: 10px;
+    }
+}
+
+/* Style des titres des cartes d'expérience */
+.experience-title {
+    font-size: 1.1rem;        /* Taille de la police du titre */
+    font-weight: bold;        /* Gras pour un effet plus marqué */
+    color: #333;              /* Couleur sombre pour un bon contraste */
+    margin-bottom: 10px;      /* Espace sous le titre pour séparer des autres éléments */
+    text-transform: capitalize; /* Capitalisation automatique des mots */
+}
+
+/* Style des cartes d'expérience */
+.experience-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Style des informations des expériences */
+.experience-info {
+    text-align: center;
+}
+
+/* Style des boutons */
+.show-info-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: #007bff;
+    margin-top: 10px;
+}
+
+.show-info-btn:hover {
+    color: #0056b3;
+}
+
+.experience-details {
+    display: none;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experience-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Icône 'plus d'informations' */
+.show-info-btn i {
+    font-size: 1.2rem;
+}
+
+
+/* Section Formation */
+#formation {
+    padding: 40px;
+    background-color: #f4f7f6;
+}
+
+
+/* Conteneur des cartes de formation */
+.formation-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Style des cartes de formation */
+.formation-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.formation-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo de chaque formation */
+.formation-logo {
+    width: auto;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+/* Informations sur la formation */
+.formation-info {
+    text-align: center;
+}
+
+/* Titre des formations */
+.formation-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Bouton "plus d'informations" */
+.show-info-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: #007bff;
+    margin-top: 10px;
+}
+
+.show-info-btn:hover {
+    color: #0056b3;
+}
+
+.formation-details {
+    display: none;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formation-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Icône 'plus d'informations' */
+.show-info-btn i {
+    font-size: 1.2rem;
+}
+
+/* Section des compétences */
+#competences {
+    padding: 40px;
+    background-color: #f4f7f6;
+}
+
+
+/* Conteneur principal pour les catégories de compétences */
+.competences-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Chaque catégorie de compétences */
+.competence-category {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.competence-category h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Liste des compétences */
+.competence-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+/* Chaque compétence */
+.competence-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.competence-item i {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.competence-item p {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.competence-item img {
+    vertical-align: middle; /* S'assurer que l'image et le texte sont bien alignés */
+}
+
+/* Effet au survol des compétences */
+.competence-item:hover i {
+    color: #0056b3;
+}
+
+.competence-item:hover p {
+    color: #333;
+}
+
+/* Section des langues */
+#langues {
+    padding: 40px;
+    background-color: #f9fafb;
+}
+
+
+/* Conteneur principal pour les cartes de langue */
+.languages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Carte de langue */
+.language-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.language-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.language-card p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Barre de progression de la langue */
+.language-bar {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 8px;
+    width: 100%;
+}
+
+.language-progress {
+    background-color: #4caf50; /* Vert pour l'anglais */
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* Effet au survol de la carte de langue */
+.language-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.language-card:hover h3 {
+    color: #007bff;
+}
+
+
+/* Section Contact */
+#contact {
+    padding: 40px;
+    background-color: #f9fafb;
+    text-align: center;
+}
+
+/* Conteneur principal pour les informations de contact */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Carte de contact */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+.contact-item .contact-details {
+    text-align: left;
+}
+
+.contact-item .contact-details strong {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.contact-item .contact-details p,
+.contact-item .contact-details a {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* Effet au survol de la carte */
+.contact-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item:hover i {
+    color: #0056b3;
+}
+/* Section Activités */
+#activites {
+    padding: 40px;
+    background-color: #f9fafb;
+    text-align: center;
+}
+
+/* Conteneur principal pour les activités */
+.activities-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Carte d'activité */
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    transition: all 0.3s ease;
+}
+
+.activity-item i {
+    font-size: 2.5rem;
+    color: #007bff;
+}
+
+.activity-item .activity-details {
+    text-align: left;
+}
+
+.activity-item .activity-details strong {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.activity-item .activity-details p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Effet au survol de la carte */
+.activity-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.activity-item:hover i {
+    color: #0056b3;
+}
+
+
+
+/* Section Télécharger le CV */
+#download {
+    padding: 40px;
+    background-color: #f9fafb;
+    text-align: center;
+}
+
+/* Style du bouton de téléchargement */
+.download-btn {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacement entre l'icône et le texte */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.download-btn i {
+    font-size: 1.4rem;
+}
+
+/* Effet au survol du bouton */
+.download-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+
