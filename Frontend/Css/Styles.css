@@ -43,6 +43,7 @@ section {
     padding: 20px; /* Ajouter du padding pour espacer le contenu */
     box-sizing: border-box; /* Inclure le padding dans la largeur totale */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) ;
+    margin-top: 20px;
 }
 
 
@@ -713,4 +714,18 @@ button:hover {
     transform: scale(1.05);
 }
 
+.header-data{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #333;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    padding: 10px;
+}
 
+.header-data:hover{
+    transform: scale(1.01);
+    color: whitesmoke;
+}
