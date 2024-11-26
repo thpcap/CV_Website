@@ -2,16 +2,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 body {
     font-family: Arial, sans-serif;
+    
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
 }
 
+body.dark-mode{
+    background-color: #333;
+    color: #f4f4f4;
+}
+
 header {
+    
     background-color: #2c3e50;
     color: white;
     padding: 20px;
@@ -39,6 +47,7 @@ header p {
 
 section {
     text-align: center;
+    background-color: #f9fafb;
     width: 90%; /* Définir la largeur de chaque section à 90% de la largeur du body */
     margin: 0 auto; /* Centrer la section horizontalement */
     padding: 20px; /* Ajouter du padding pour espacer le contenu */
@@ -109,24 +118,6 @@ button:hover {
     box-sizing: border-box; /* Assurer que le padding ne dépasse pas de la largeur */
 }
 
-/* Style pour le bouton */
-.show-info-btn {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-/* Effet au survol du bouton */
-.show-info-btn:hover {
-    background-color: #0056b3;
-}
-
-
 
 @media (max-width: 768px) {
     .header-content {
@@ -147,25 +138,40 @@ button:hover {
     }
 }
 
-/* Section des expériences */
-#experiences {
-    background-color: #f9f9f9;
+/* Flèche symbolisant le temps */
+
+.time-arrow {
+    position: relative;
+    display: inline-block;
+    width: 80%; /* Longueur de la flèche */
+    height: 5px; /* Épaisseur de la flèche */
+    background-color: #4CAF50; /* Couleur de la flèche */
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px; /* Légèrement arrondi pour un effet plus esthétique */
 }
 
-/* Flèche symbolisant le temps */
-.time-arrow {
-    width: 50px;
-    height: 3px;
-    background-color: #4CAF50;
-    margin: 0 auto 20px;
+.time-arrow::before {
+    content: '';
+    position: absolute;
+    top: -7.5px; /* Ajustement pour le triangle */
+    left: -10px; /* Position du triangle */
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid #4CAF50; /* Couleur identique à la barre */
+    border-radius: 3px;
 }
+
 
 /* Conteneur des cartes en grille */
 .experience-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
     gap: 20px;
     justify-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 /* Cartes d'expérience */
@@ -177,7 +183,7 @@ button:hover {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -190,7 +196,7 @@ button:hover {
 
 /* Logos des entreprises */
 .experience-logo {
-    max-width: 50%;
+    max-width: 100%;
     object-fit: cover;
     max-height: 80px;
     display: block;
@@ -204,22 +210,30 @@ button:hover {
 }
 
 .show-info-btn {
-    background-color: #4CAF50;
-    color: white;
+    background-color: white;
+    color: #0056b3;
     border: none;
-    padding: 12px;
+    padding: 2px;
     font-size: 1.5rem; /* Taille plus grande pour l'icône */
     border-radius: 50%;
     cursor: pointer;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
     margin-bottom: 10px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .show-info-btn:hover {
-    background-color: #45a049;
+    color: #007bff;
+    background-color: whitesmoke;
     transform: scale(1.1); /* Agrandit le bouton au survol */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.show-info-btn:active{
+    box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .show-info-btn i {
@@ -262,10 +276,6 @@ button:hover {
     .experience-card {
         max-width: 90%;
     }
-
-    .show-info-btn {
-        padding: 10px;
-    }
 }
 
 /* Style des titres des cartes d'expérience */
@@ -277,73 +287,11 @@ button:hover {
     text-transform: capitalize; /* Capitalisation automatique des mots */
 }
 
-/* Style des cartes d'expérience */
-.experience-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    transition: all 0.3s ease-in-out;
-}
-
-.experience-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-/* Style des informations des expériences */
-.experience-info {
-    text-align: center;
-}
-
-/* Style des boutons */
-.show-info-btn {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 1.3rem;
-    color: #007bff;
-    margin-top: 10px;
-}
-
-.show-info-btn:hover {
-    color: #0056b3;
-}
-
-.experience-details {
-    display: none;
-    margin-top: 10px;
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.experience-details ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-/* Icône 'plus d'informations' */
-.show-info-btn i {
-    font-size: 1.2rem;
-}
-
-
-/* Section Formation */
-#formation {
-    background-color: #f4f7f6;
-}
-
-
 /* Conteneur des cartes de formation */
 .formation-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     gap: 20px;
     justify-items: center;
 }
@@ -363,7 +311,7 @@ button:hover {
 }
 
 .formation-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
@@ -403,15 +351,6 @@ button:hover {
     margin-left: 20px;
 }
 
-/* Icône 'plus d'informations' */
-.show-info-btn i {
-    font-size: 1.2rem;
-}
-
-/* Section des compétences */
-#competences {
-    background-color: #f4f7f6;
-}
 
 
 /* Conteneur principal pour les catégories de compétences */
@@ -419,6 +358,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    
 }
 
 /* Chaque catégorie de compétences */
@@ -484,11 +424,6 @@ button:hover {
     color: #333;
 }
 
-/* Section des langues */
-#langues {
-    background-color: #f9fafb;
-}
-
 
 /* Conteneur principal pour les cartes de langue */
 .languages-container {
@@ -546,7 +481,6 @@ button:hover {
 
 /* Section Contact */
 #contact {
-    background-color: #f9fafb;
     text-align: center;
 }
 
@@ -619,7 +553,6 @@ button:hover {
 }
 /* Section Activités */
 #activites {
-    background-color: #f9fafb;
     text-align: center;
 }
 
@@ -680,7 +613,6 @@ button:hover {
 
 /* Section Télécharger le CV */
 #download {
-    background-color: #f9fafb;
     text-align: center;
 }
 
@@ -732,4 +664,129 @@ footer{
     text-align: center;
     background-color: #2c3e50;
     color: white;
+}
+
+address{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Styles généraux pour le Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Header */
+.dark-mode header {
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+}
+
+/* Sections */
+.dark-mode section {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    border: 1px solid #333333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Titres */
+.dark-mode h1, .dark-mode h2, .dark-mode h3 {
+    color: #e0e0e0;
+}
+
+/* Liens */
+.dark-mode a {
+    color: #76c7ff;
+}
+
+.dark-mode a:hover {
+    color: #9be0ff;
+}
+
+/* Boutons */
+.dark-mode button {
+    background-color: #333;
+    color: #f5f5f5;
+    border: 1px solid #555;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Carte en mode sombre */
+.dark-mode .competence-item, 
+.dark-mode .formation-card,
+.dark-mode .experience-card,
+.dark-mode .language-card,
+.dark-mode .contact-item,
+.dark-mode .activity-item
+{
+    background-color: #242424;
+    color: #ccc;
+    border: 1px solid #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.dark-mode .competence-category {
+    background-color: #333;
+    color: #ccc;
+    border: 1px solid #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7)
+}
+
+.dark-mode .formation-details,
+.dark-mode .formation-details address{
+    color: #ccc;
+    border: 1px solid #ccc;
+}
+
+.dark-mode .activity-item .activity-details strong,
+.dark-mode .activity-item .activity-details p,
+.dark-mode .contact-item .contact-details p,
+.dark-mode .contact-item .contact-details a,
+.dark-mode .contact-item .contact-details strong,
+.dark-mode .language-card p,
+.dark-mode .experience-details p {
+    color: #ccc;
+}
+
+.dark-mode .competence-item:hover p{
+    color: #ffffff;
+}
+
+#dark-mode-toggle {
+    position: absolute;
+    top: 10px;       /* Distance par rapport au haut de la fenêtre */
+    right: 10px;     /* Distance par rapport à la droite */
+    z-index: 1000;   /* Assure que le bouton est au-dessus des autres éléments */
+}
+.dark-mode .experience-details,
+.dark-mode .formation-details{
+    background-color: #333;
+}
+
+.light-mode-image{
+    display: block;
+}
+
+.dark-only{
+    display: none;
+}
+
+body.dark-mode .light-mode-image{
+    display: none ;
+}
+
+body.dark-mode .dark-only{
+    display: block;
+}
+
+.dark-mode .language-progress,
+.dark-mode .time-arrow{
+    background-color: #245626;
+}
+
+.dark-mode .time-arrow::before{
+    border-right:20px solid #245626;
 }

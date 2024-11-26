@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV  de Thomas Capron,étudiant ingénieur informatique spécialisé en développement web.">
     <title>Thomas Capron - CV</title>
+    <link rel="icon" href="../Images/Icon.png">
     <!-- Chargement dynamique de Styles.css -->
     <link id="main-stylesheet" rel="stylesheet" href="../Css/Styles.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -36,7 +38,8 @@
     <header>
 
         <div class="header-content">
-            <img src="../Images/photo_profil.png" alt="Thomas Capron" class="profile-photo">
+            <img src="../Images/photo_profil.png" alt="Thomas Capron" class="profile-photo" >
+            <button id="dark-mode-toggle">🌙 Dark Mode</button>
             <h1>Thomas CAPRON</h1>
             <p>Futur ingénieur en informatique</p>
             <p><strong>Date de naissance :</strong> 10 avril 2003</p>
@@ -107,30 +110,53 @@
 
             <!-- IMT Nord Europe -->
             <div class="formation-card">
-                <img src="../Images/logos/imt_logo.png" alt="IMT Nord Europe" class="formation-logo">
+                <img src="../Images/logos/imt_logo.png" alt="IMT Nord Europe" class="formation-logo light-mode-image">
+                <img src="../Images/logos/imt_logo_dark.png" alt="IMT Nord Europe" class="formation-logo dark-mode-image dark-only">
                 <div class="formation-info">
                     <h3 class="formation-title">IMT Nord Europe </h3> <!-- Titre ajouté -->
-                    <p>(2021 - Actuellement)</p>
+                    <p>(2023 - Actuellement)</p>
                     <button class="show-info-btn" onclick="toggleInfo('formation1')">
-                        <i class="fas fa-plus-circle"></i> <!-- Icône de plus d'informations -->
+                        + <!-- Icône de plus d'informations -->
                     </button>
                     <div id="formation1" class="formation-details">
-                        <p>2ème année de cycle ingénieur à IMT Nord Europe, spécialisation en developpement web full-stack. après deux ans de classe preparatoire integrée à IMT Nord Europe</p>
+                        <h4>2ème année de cycle ingénieur à IMT Nord Europe</h4>
+                        <p>spécialisation en developpement web. </p>
+                        <address>941 rue Charles Bourseul 59508 Douai</address>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- IMT Nord Europe -->
+            <div class="formation-card">
+                <img src="../Images/logos/imt_logo.png" alt="IMT Nord Europe" class="formation-logo light-mode-image">
+                <img src="../Images/logos/imt_logo_dark.png" alt="IMT Nord Europe" class="formation-logo dark-mode-image dark-only">
+                <div class="formation-info">
+                    <h3 class="formation-title">IMT Nord Europe </h3> <!-- Titre ajouté -->
+                    <p>(2021 - 2023)</p>
+                    <button class="show-info-btn" onclick="toggleInfo('formation2')">
+                        + <!-- Icône de plus d'informations -->
+                    </button>
+                    <div id="formation2" class="formation-details">
+                        <h4>Deux annés de classe préparatoire integrée à IMT Nord Europe</h4>
+                        <address>Cité scientifique Rue Guglielmo Marconi, 59650 Villeneuve-d’Ascq</address>
                     </div>
                 </div>
             </div>
 
             <!-- Lycée Edmond Labbé -->
             <div class="formation-card">
-                <img src="../Images/logos/edmond_labbé_logo.png" alt="Lycée Edmond Labbé" class="formation-logo">
+                <img src="../Images/logos/edmond_labbé_logo.png" alt="Lycée Edmond Labbé" class="formation-logo" style="border-radius: 10px;">
                 <div class="formation-info">
                     <h3 class="formation-title">Lycée Edmond Labbé, Douai </h3> <!-- Titre ajouté -->
                     <p>(2018 - 2021)</p>
-                    <button class="show-info-btn" onclick="toggleInfo('formation2')">
-                        <i class="fas fa-plus-circle"></i> <!-- Icône de plus d'informations -->
+                    <button class="show-info-btn" onclick="toggleInfo('formation3')">
+                        + <!-- Icône de plus d'informations -->
                     </button>
-                    <div id="formation2" class="formation-details">
-                        <p>Bac général, option mathématiques, physique, mention Très Bien.</p>
+                    <div id="formation3" class="formation-details">
+                        <h4>Bac général, option mathématiques, physique, mention Très Bien.</h4>
+                        <address>817 rue Charles Bourseul 59500 DOUAI</address>
                     </div>
                 </div>
             </div>
@@ -153,11 +179,12 @@
                     <h3 class="experience-title">Stage à Airbus Defense and Space </h3> <!-- Titre ajouté -->
                     <p>(2023)</p>
                     <button class="show-info-btn" onclick="toggleInfo('experience1')">
-                        <i class="fas fa-plus-circle"></i> <!-- Icône de plus d'informations -->
+                        + <!-- Icône de plus d'informations -->
                     </button>
                     <div id="experience1" class="experience-details">
                         <p>Stage de 9 semaines dans le service validation...</p>
                         <p>Intégration dans le service validation du site « région parisienne » :</p>
+                        <br>
                         <strong>Tâches effectuées :</strong>
                         <ul>
                             <li>Installation d’équipements anti ESD.</li>
@@ -175,13 +202,17 @@
                     <h3 class="experience-title">Stage à Worldline</h3> <!-- Titre ajouté -->
                     <p>(2022)</p>
                     <button class="show-info-btn" onclick="toggleInfo('experience2')">
-                        <i class="fas fa-plus-circle"></i> <!-- Icône de plus d'informations -->
+                        + <!-- Icône de plus d'informations -->
                     </button>
                     <div id="experience2" class="experience-details">
                         <p>Stage de 8 semaines dans l’équipe « Computer Room » des sites de Seclin :</p>
+                        <br>
                         <strong>Tâches effectuées :</strong>
                         <ul>
-                            <li>Installation, maintenance, démontage de serveurs dans un datacenter.</li>
+                            <li>Installation</li>
+                            <li>Maintenance</li>
+                            <li>Démontage de serveurs dans un datacenter.</li>
+                            <li>Décablage des faux planchers du datacenter</li>
                         </ul>
                     </div>
                 </div>
@@ -194,10 +225,14 @@
                     <h3 class="experience-title">Stage à NXP Semiconductors</h3> <!-- Titre ajouté -->
                     <p>(2019)</p>
                     <button class="show-info-btn" onclick="toggleInfo('experience3')">
-                        <i class="fas fa-plus-circle"></i> <!-- Icône de plus d'informations -->
+                        + <!-- Icône de plus d'informations -->
                     </button>
                     <div id="experience3" class="experience-details">
                         <p>Stage de 2 semaines dans une entreprise de semi-conducteurs.</p>
+                        <strong>Tâches effectuées :</strong>
+                        <ul>
+                            <li>Observation</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -209,10 +244,14 @@
                     <h3 class="experience-title">Stage à Atos Worldline</h3> <!-- Titre ajouté -->
                     <p>(2017)</p>
                     <button class="show-info-btn" onclick="toggleInfo('experience4')">
-                        <i class="fas fa-plus-circle"></i> <!-- Icône de plus d'informations -->
+                        + <!-- Icône de plus d'informations -->
                     </button>
                     <div id="experience4" class="experience-details">
                         <p>Stage de 1 semaine dans une SSII, découverte des différents métiers de l’informatique.</p>
+                        <strong>Tâches effectuées :</strong>
+                        <ul>
+                            <li>Observation</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -388,7 +427,6 @@
     </section>
 
     <section id="download" data-aos="fade-up">
-
         <h2>Télécharger le CV</h2>
         <!-- Bouton pour télécharger le CV -->
         <a href="../CV_Thomas_Capron.pdf" download>
@@ -399,11 +437,7 @@
 
     </section>
 
-
-    
-
     <footer>
-
         <p>&copy; 2024 Thomas Capron. Tous droits réservés.</p>
     </footer>
 
@@ -415,11 +449,11 @@
     <!--
      _____           _______
     |    / |\    /| /_     /
-    |  /   |  \/  |   |  /
-    |/     |______|   |/
-        IMT Nord Europe
-      Ecole Mines-Télécom
-    IMT-Université de Lille
+    |  /   |  \/  |   |  /  
+    |/     |______|   |/   
+    IMT Nord Europe
+    École Mines-Télécom
+    IMT - Université de Lille
 
     -->
 </body>
