@@ -1,12 +1,12 @@
 /*
-         ___________
-        |           |
-        |    \"/    |
-        |  .-.".-.  |
-        |   '   `   |
-        |  Warning  |
-        | Bad  Code |
-        |___________|
+  /   ___________ 
+ |   |           |
+ |   |    \"/    |
+/    |  .-.".-.  |
+\    |   '   `   |
+ |   |  Warning  |
+ |   | Bad  Code |
+  \  |___________|
 */
 
 // Fonction pour afficher/masquer les informations
@@ -76,3 +76,13 @@ $(document).ready(function () {
         }
     });
 });
+/*
+ ___________    \
+|           |    |
+|    \"/    |    |
+|  .-.".-.  |     \
+|   '   `   |     /
+|  Warning  |    |
+| Bad  Code |    |
+|___________|   /
+*/
