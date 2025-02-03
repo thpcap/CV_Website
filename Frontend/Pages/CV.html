@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!--
+    /  ___________  \
+  /  |           |  \
+ /   |    \"/    |   \
+/    |  .-.".-.  |    \
+\    |   '   `   |    /
+ \   |  Warning  |   /
+  \  | Bad  Code |  /
+   \ |___________| /
+-->
+<html lang="fr">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="CV de Thomas Capron, étudiant ingénieur informatique spécialisé en développement web.">
+     <title>Thomas Capron - CV</title>
+     <link rel="icon" href="../Images/Icon.png">
+     <link id="main-stylesheet" rel="stylesheet" href="../Css/Styles.css">
+     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="dark-mode">
+     <header>
+          <div class="header-content">
+                <br><br>
+                <img src="../Images/photo_profil.png" alt="Thomas Capron" class="profile-photo">
+                <button id="dark-mode-toggle">🌙 Dark Mode</button>
+                <h1>Thomas CAPRON</h1>
+                <p>Futur ingénieur en informatique</p>
+                <p><strong>Date de naissance :</strong> 10 avril 2003</p>
+                <p><strong>Nationalité :</strong> Française</p>
+                <div class="header-data">
+                     <p>Recherche stage en<strong> développement web</strong></p>
+                     <p>de 14 à 16 semaines</p>
+                     <p>à partir du <strong>lundi 7 avril 2025</strong></p>
+                </div>
+          </div>
+     </header>
+     <section id="sommaire" data-aos="fade-up">
+          <h2>Sommaire</h2>
+          <div id="sommaire_content"></div>
+     </section>
+     <section id="contact" data-aos="fade-up">
+          <h2>Contact</h2>
+          <div class="contact-info">
+                <div class="contact-item">
+                     <i class="fas fa-phone-alt"></i>
+                     <div class="contact-details">
+                          <strong>Téléphone : </strong>
+                          <p>+33 (0)7 82 05 16 50</p>
+                     </div>
+                </div>
+                <div class="contact-item">
+                     <i class="fas fa-envelope"></i>
+                     <div class="contact-details">
+                          <strong>E-Mail : </strong>
+                          <a href="mailto:thomas.capron@etu.imt-nord-europe.fr">thomas.capron@etu.imt-nord-europe.fr</a>
+                     </div>
+                </div>
+                <div class="contact-item">
+                     <i class="fas fa-map-marker-alt"></i>
+                     <div class="contact-details">
+                          <strong>Adresse : </strong>
+                          <p>819 Rue Voltaire, 59283 RAIMBEAUCOURT</p>
+                     </div>
+                </div>
+                <div class="contact-item">
+                     <i class="fa-brands fa-linkedin"></i>
+                     <div class="contact-details">
+                          <strong>Linkedin : </strong><a href="https://linkedin.com/in/thomas-capron-59f">linkedin.com/in/thomas-capron-59f</a>
+                     </div>
+                </div>
+                <div class="contact-item">
+                     <i class="fa-brands fa-github"></i>
+                     <div class="contact-details">
+                          <strong>GitHub : </strong>
+                          <a href="https://github.com/thpcap">github.com/thpcap</a>
+                     </div>
+                </div>
+          </div>
+     </section>
+     <section id="formation" data-aos="fade-up">
+          <h2>Formation</h2>
+          <div class="formation-container">
+                <div class="formation-card">
+                     <img src="../Images/logos/imt_logo.png" alt="IMT Nord Europe" class="formation-logo light-mode-image">
+                     <img src="../Images/logos/imt_logo_dark.png" alt="IMT Nord Europe" class="formation-logo dark-mode-image dark-only">
+                     <div class="formation-info">
+                          <a class="formation-title" href="https://imt-nord-europe.fr/">IMT Nord Europe </a>
+                          <p>(2021 - 2026)</p>
+                          <button class="show-info-btn" onclick="toggleInfo('formation1')">
+                                + <!-- Icône de plus d'informations -->
+                          </button>
+                          <div id="formation1" class="formation-details">
+                                <h4>2ème année de cycle ingénieur généraliste</h4>
+                                <p>spécialisation en développement web full stack, infrastructure big data, système/réseau.</p>
+                                <address>941 rue Charles Bourseul 59500 Douai</address>
+                          </div>
+                     </div>
+                </div>
+                <div class="formation-card">
+                     <img src="../Images/logos/edmond_labbé_logo.png" alt="Lycée Edmond Labbé" class="formation-logo" style="border-radius: 10px;">
+                     <div class="formation-info">
+                          <h3 class="formation-title">Lycée Edmond Labbé, Douai </h3>
+                          <p>(2018 - 2021)</p>
+                          <button class="show-info-btn" onclick="toggleInfo('formation2')">
+                                + <!-- Icône de plus d'informations -->
+                          </button>
+                          <div id="formation2" class="formation-details">
+                                <h4>Bac général, option mathématiques, physique, mention Très Bien.</h4>
+                                <address>817 rue Charles Bourseul 59500 DOUAI</address>
+                          </div>
+                     </div>
+                </div>
+          </div>
+     </section>
+     <section id="experiences" data-aos="fade-up">
+          <h2>Expériences Professionnelles</h2>
+          <div class="experience-container">
+                <div class="experience-card">
+                     <img src="../Images/logos/airbus_logo.png" alt="Airbus Defense and Space" class="experience-logo">
+                     <div class="experience-info">
+                          <h3 class="experience-title">Stage à Airbus Defense and Space </h3>
+                          <p>(2023)</p>
+                          <button class="show-info-btn" onclick="toggleInfo('experience1')">
+                                + <!-- Icône de plus d'informations -->
+                          </button>
+                          <div id="experience1" class="experience-details">
+                                <p>Stage de 9 semaines dans le service validation du site « Région Parisienne » :</p>
+                                <ul>
+                                     <li>Installation d’équipements anti ESD.</li>
+                                     <li>Mise en place de pratiques 5S dans un laboratoire d’électronique.</li>
+                                     <li>Démontage de moyens de test des équipements électroniques de satellites.</li>
+                                </ul>
+                          </div>
+                     </div>
+                </div>
+                <div class="experience-card">
+                     <img src="../Images/logos/worldline_logo.png" alt="Worldline" class="experience-logo">
+                     <div class="experience-info">
+                          <h3 class="experience-title">Stage à Worldline</h3>
+                          <p>(2022)</p>
+                          <button class="show-info-btn" onclick="toggleInfo('experience2')">
+                                + <!-- Icône de plus d'informations -->
+                          </button>
+                          <div id="experience2" class="experience-details">
+                                <p>Stage de 8 semaines dans l’équipe « Computer Room » des sites de Seclin :</p>
+                                <ul>
+                                     <li>Installation, maintenance, démontage de serveurs dans un datacenter.</li>
+                                     <li>Décablage des faux planchers du datacenter.</li>
+                                </ul>
+                          </div>
+                     </div>
+                </div>
+          </div>
+     </section>
+     <section id="projects" data-aos="fade-up">
+          <h2>Projets</h2>
+          <div class="project-container">
+                <div class="project-card">
+                     <div class="project-info">
+                          <h3 class="project-title">Projet de Création d'un Grapheur d’Expression Fonctionnelle</h3>
+                          <ul>
+                                <li>Développement d’un grapheur d'expression fonctionnelle</li>
+                                <li>Technologies : C/C++, GitHub</li>
+                                <li>Compétences développées : Travail d’équipe (équipe de 8), Résolution de problèmes</li>
+                          </ul>
+                     </div>
+                </div>
+                <div class="project-card">
+                     <div class="project-info">
+                          <h3 class="project-title">Projet Ouvert : « Initiation à l’Aéronautique »</h3>
+                          <ul>
+                                <li>Interventions pédagogiques au collège André Malraux de Lambres-lez-Douai</li>
+                                <li>Sensibilisation des élèves aux bases de l’aéronautique via des animations ludiques</li>
+                                <li>Compétences développées : Travail d’équipe (équipe de 6), Gestion de projet, Vulgarisation</li>
+                          </ul>
+                     </div>
+                </div>
+                <div class="project-card">
+                     <div class="project-info">
+                          <h3 class="project-title">Projet de Site Web : « IMangerMieux »</h3>
+                          <ul>
+                                <li>Création d'un site web de gestion de la nutrition</li>
+                                <li>Technologies : HTML, CSS, JavaScript, MySQL, PHP, GitHub, Raspberry Pi, Linux</li>
+                                <li>Compétences développées : Travail d’équipe (équipe de 2), Créativité</li>
+                                <li>Travail effectué : Développement Backend, Frontend et Système</li>
+                          </ul>
+                     </div>
+                </div>
+                <div class="project-card">
+                     <div class="project-info">
+                          <h3 class="project-title">Projet de CV Web</h3>
+                          <ul>
+                                <li>Développement d’un site web personnel sous forme de CV interactif</li>
+                                <li>Technologies : HTML, CSS, JavaScript, PHP, Raspberry Pi, Linux, GitHub</li>
+                                <li>Compétences développées : Autonomie, résolution de problèmes</li>
+                          </ul>
+                     </div>
+                </div>
+          </div>
+     </section>
+     <section id="competences" data-aos="fade-up">
+          <h2>Compétences</h2>
+          <div class="competences-container">
+                <div class="competence-category">
+                     <h3>Compétences Générales</h3>
+                     <div class="competence-list">
+                          <div class="competence-item">
+                                <i class="fas fa-users"></i>
+                                <p>Travail d’Équipe</p>
+                          </div>
+                          <div class="competence-item">
+                                <i class="fas fa-clock"></i>
+                                <p>Gestion du Temps</p>
+                          </div>
+                          <div class="competence-item">
+                                <i class="fas fa-random"></i>
+                                <p>Adaptabilité</p>
+                          </div>
+                          <div class="competence-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <p>Esprit d’Initiative</p>
+                          </div>
+                          <div class="competence-item">
+                                <i class="fas fa-clipboard-check"></i>
+                                <p>Rigueur</p>
+                          </div>
+                          <div class="competence-item">
+                                <i class="fas fa-cogs"></i>
+                                <p>Méthode</p>
+                          </div>
+                     </div>
+                </div>
+                <div class="competence-category">
+                     <h3>Langages de Programmation</h3>
+                     <div class="competence-list">
+                          <div class="competence-item">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/280px-C_Programming_Language.svg.png" alt="C Logo" width="auto" height="30">
+                                <p>C</p>
+                          </div>
+                          <div class="competence-item">
+                                <i class="fa-brands fa-java"></i>
+                                <p>Java</p>
+                          </div>
+                          <div class="competence-item">
+                                <i class="fa-brands fa-python"></i>
+                                <p>Python</p>
+                          </div>
+                          <div class="competence-item">
+                                <i class="fa-brands fa-php"></i>
+                                <p>PHP</p>
+                          </div>
+                     </div>
+                </div>
+                <div class="competence-category">
+                     <h3>Compétences Front-End</h3>
+                     <div class="competence-list">
+                          <div class="competence-item">
+                                <i class="fab fa-html5"></i>
+                                <p>HTML</p>
+                          </div>
+                          <div class="competence-item">
+                                <i class="fab fa-css3-alt"></i>
+                                <p>CSS</p>
+                          </div>
+                          <div class="competence-item">
+                                <i class="fab fa-js-square"></i>
+                                <p>Javascript</p>
+                          </div>
+                     </div>
+                </div>
+                <div class="competence-category">
+                     <h3>Compétences Back-End</h3>
+                     <div class="competence-list">
+                          <div class="competence-item">
+                                <i class="fas fa-database"></i>
+                                <p>SQL</p>
+                          </div>
+                          <div class="competence-item">
+                                <i class="fa-solid fa-terminal"></i>
+                                <p>Linux / Windows</p>
+                          </div>
+                          <div class="competence-item">
+                                <i class="fas fa-server"></i>
+                                <p>Virtualisation</p>
+                          </div>
+                          <div class="competence-item">
+                                <i class="fas fa-network-wired"></i>
+                                <p>Infrastructure Réseau</p>
+                          </div>
+                          <div class="competence-item">
+                                <i class="fas fa-cloud"></i>
+                                <p>Infrastructure Web</p>
+                          </div>
+                     </div>
+                </div>
+          </div>
+     </section>
+     <section id="langues" data-aos="fade-up">
+          <h2>Langues</h2>
+          <div class="languages-container">
+                <div class="language-card">
+                     <h3>Français</h3>
+                     <p><strong>Langue Maternelle</strong></p>
+                     <div class="language-bar">
+                          <div class="language-progress" style="width: 99%;"></div>
+                     </div>
+                </div>
+                <div class="language-card">
+                     <h3>Anglais</h3>
+                     <p><strong>Niveau :</strong> Expérimenté (C1)</p>
+                     <p>Score <strong>TOEIC</strong> : 985/990</p>
+                     <div class="language-bar">
+                          <div class="language-progress" style="width: 93%;"></div>
+                     </div>
+                </div>
+                <div class="language-card">
+                     <h3>Allemand</h3>
+                     <p><strong>Niveau :</strong> Scolaire</p>
+                     <div class="language-bar">
+                          <div class="language-progress" style="width: 25%;"></div>
+                     </div>
+                </div>
+          </div>
+     </section>
+     <section id="activites" data-aos="fade-up">
+          <h2>Activités extrascolaires</h2>
+          <div class="activities-container">
+                <div class="activity-item">
+                     <i class="fas fa-bullseye"></i>
+                     <div class="activity-details">
+                          <strong>Tir à l’arc en club</strong>
+                          <p>Pratique du tir à l'arc en club, favorisant le développement de la concentration et de la précision.</p>
+                     </div>
+                </div>
+                <div class="activity-item">
+                     <i class="fas fa-music"></i>
+                     <div class="activity-details">
+                          <strong>Chorale au collège</strong>
+                          <p>Participation au concert <em>« Prodiges : Le Grand Concert »</em> diffusé sur France 2 en 2017.</p>
+                     </div>
+                </div>
+          </div>
+     </section>
+     <section id="download" data-aos="fade-up">
+          <h2>Téléchargement</h2>
+          <a href="../CV_CAPRON_Thomas.pdf" download>
+                <button class="download-btn">
+                     <i class="fas fa-download"></i> Télécharger en PDF
+                </button>
+          </a>
+     </section>
+     <footer>
+          <p>&copy; 2025 Thomas Capron. Tous droits réservés.</p>
+     </footer>
+     <script src="../JS/script.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+     <script>
+          AOS.init();
+     </script>
+</body>
+</html>
